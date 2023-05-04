@@ -1,0 +1,140 @@
+@import url(./reset.css);
+
+body {
+    color: #000000;
+}
+
+a {text-decoration: none; color: inherit;}
+
+/* Header */
+header {
+    width: 100%;
+    background: #222020f1;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.page-head {
+    color: #ffffff;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title, .anchor {color: #ffffff;}
+
+.page-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-left: 2em;
+}
+
+.anchor {
+    font-size: 1.5rem; 
+    margin-right: 2em;
+}
+
+.search-form {
+    width: 800px;
+    height: 47.8px /2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: calc(-47.8px /2);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+#search-bar,
+#search-btn {
+    font-size: 1.3rem;
+    padding: .5em;
+    border: 1.5px solid #86888a;
+}
+
+#search-bar {
+    background: #ffffff url(../images/Search.png) no-repeat 7px 14px;
+    width: 650px;
+    padding-left: 1.7em;
+    border-right: none;
+    border-radius: 6px 0px 0px 6px;
+}
+
+#search-btn {
+    cursor: pointer;
+    width: 150px;
+    border-radius: 0px 6px 6px 0px;
+    background-color: #F9FAFB;
+}
+
+/* Movies Display */
+#movies-display {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.movie {
+    width: 40%;
+    padding: 1.5rem 0;
+    border-bottom: 2px solid #E5E7EB;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 1rem auto auto 1fr;
+    grid-template-columns: 2fr 1rem 4fr;
+    grid-template-areas:
+        "poster margin-mid top-margin"
+        "poster margin-mid title"
+        "poster margin-mid info"
+        "poster margin-mid plot";
+}
+
+.movie-title, .movie-info {margin-bottom: 1em;}
+
+.movie-title {
+    font-size: 1.5rem;
+    grid-area: title;
+}
+
+.movie-rating {
+    font-size: 1.1rem;
+    margin-left: 1em;
+}
+
+.movie-poster {   
+    width: 100%;
+    grid-area: poster;
+    border-radius: 8px;
+}
+
+.movie-info {
+    font-size: .9rem;
+    grid-area: info;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    position: relative;
+}
+
+.add-to-watchlist {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.movie-plot {
+    grid-area: plot;
+    width: auto;
+}
+
+.hide {
+    display: none;
+}
+
