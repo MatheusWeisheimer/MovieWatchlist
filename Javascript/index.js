@@ -35,7 +35,7 @@ function getWatchlist() {
 }
 
 async function getMoviesArray() {
-    const title = document.getElementById('search-bar').value.replaceAll(' ', '+')
+    const title = getCorrectedSearch()
     const res = await fetch(`http://www.omdbapi.com/?apikey=af9f9545&s=${title}`)
     const data = await res.json()
     const resultingMovies = await Promise.all(data.Search.map(async (film) => {
@@ -100,4 +100,9 @@ function initWatchlist() {
     currentMovies = watchlist
     renderMovies(currentMovies)
     document.querySelector('.absolute').style.display = 'none'
+}
+
+function getCorrectedSearch() {
+    const search = document.getElementById('search-bar').value
+    return search.trim().replaceAll(' ', '+')
 }
